@@ -16,28 +16,34 @@
   <!-- SEO -->
   <meta name="description" content="Grooming y cuidado personalizado para perritos felices en Lovely Dog Care. Baño, corte, daycare y estética canina con mucho amor." />
   <meta name="theme-color" content="#16e078" />
-
   <link rel="canonical" href="https://chepot87.github.io/LovelyDogCare/">
 
-  <!-- Open Graph (WhatsApp, iMessage, FB, etc.) -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://chepot87.github.io/LovelyDogCare/">
-<meta property="og:title" content="Lovely Dog Care — Grooming y cuidado canino">
-<meta property="og:description" content="Baño, corte, daycare y estética canina con enfoque fear-free. Agenda por WhatsApp.">
-<meta property="og:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:type" content="image/jpeg">
+  <!-- Social (Open Graph / Twitter) -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chepot87.github.io/LovelyDogCare/">
+  <meta property="og:site_name" content="Lovely Dog Care">
+  <meta property="og:title" content="Lovely Dog Care — Grooming y cuidado canino">
+  <meta property="og:description" content="Baño, corte, daycare y estética canina con enfoque fear-free. Agenda por WhatsApp.">
+  <meta property="og:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:alt" content="Lovely Dog Care — Grooming y cuidado canino">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lovely Dog Care — Grooming y cuidado canino">
-<meta name="twitter:description" content="Baño, corte, daycare y estética canina con enfoque fear-free.">
-<meta name="twitter:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
-
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lovely Dog Care — Grooming y cuidado canino">
+  <meta name="twitter:description" content="Baño, corte, daycare y estética canina con enfoque fear-free.">
+  <meta name="twitter:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
 
   <!-- CSS -->
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Fix anclas en mobile (header cubriendo el inicio de la sección) -->
+  <style>
+    :root { --header-h: 72px; }             /* ajusta si tu header es más alto */
+    html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
+    #about, #galeria, #services, #pricing, #reviews, #contact { scroll-margin-top: var(--header-h); }
+  </style>
 </head>
 <body>
 
@@ -87,7 +93,6 @@
       <p class="section-sub">Unos cuantos peludos felices después del grooming 💖</p>
 
       <div class="gallery-grid">
-    
         <figure class="shot">
           <img src="img/perro2.png" alt="Toby — antes y después de Full Groom" loading="lazy">
           <figcaption>Toby — Full Groom</figcaption>
@@ -100,17 +105,16 @@
           <img src="img/perro4.png" alt="Max — corte de raza" loading="lazy">
           <figcaption>Max — Estilo de raza</figcaption>
         </figure>
-           <figure class="shot">
-          <img src="img/perro5.png" alt="Max — corte de raza" loading="lazy">
+        <figure class="shot">
+          <img src="img/perro5.png" alt="Mia — grooming de mantenimiento" loading="lazy">
           <figcaption>Mia — Grooming</figcaption>
         </figure>
-          </figure>
-          <figure class="shot">
-          <img src="img/perro6.png" alt="Max — corte de raza" loading="lazy">
+        <figure class="shot">
+          <img src="img/perro6.png" alt="Lola — Full Groom" loading="lazy">
           <figcaption>Lola — Full Groom</figcaption>
         </figure>
-          <figure class="shot">
-          <img src="img/perro7.png" alt="Max — corte de raza" loading="lazy">
+        <figure class="shot">
+          <img src="img/perro7.png" alt="Rex — Baño y paseo" loading="lazy">
           <figcaption>Rex — Baño y paseo</figcaption>
         </figure>
       </div>
@@ -267,73 +271,72 @@
     </section>
 
     <!-- ========== About (glass) ========== -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-wrap about-dark">
-      <div class="about-copy">
-        <h2 class="section-title">Conócenos</h2>
+    <section id="about" class="section">
+      <div class="container">
+        <div class="about-wrap about-dark">
+          <div class="about-copy">
+            <h2 class="section-title">Conócenos</h2>
 
-        <p>
-          Hola, soy <strong>Francis Ortiz</strong>, fundadora de <em>Lovely Dog Care</em>
-          y groomer profesional. Me formé en técnicas de
-          <strong>higiene, manejo del manto y estilos por raza</strong>, y estoy
-          certificada en <strong>Primeros Auxilios &amp; CPR para mascotas</strong>.
-          Mi enfoque es <strong>fear-free</strong>: sesiones tranquilas, seguras y con
-          refuerzo positivo para que tu perrito disfrute su grooming.
-        </p>
+            <p>
+              Hola, soy <strong>Francis Ortiz</strong>, fundadora de <em>Lovely Dog Care</em>
+              y groomer profesional. Me formé en técnicas de
+              <strong>higiene, manejo del manto y estilos por raza</strong>, y estoy
+              certificada en <strong>Primeros Auxilios &amp; CPR para mascotas</strong>.
+              Mi enfoque es <strong>fear-free</strong>: sesiones tranquilas, seguras y con
+              refuerzo positivo para que tu perrito disfrute su grooming.
+            </p>
 
-        <p>
-          Trabajo con <strong>pieles sensibles</strong>, protocolos de limpieza rigurosos y
-          productos <strong>aprobados para uso canino</strong>. Cada servicio se adapta a la
-          condición del manto y a la personalidad de tu peludo para lograr un
-          resultado bonito, cómodo y saludable.
-        </p>
+            <p>
+              Trabajo con <strong>pieles sensibles</strong>, protocolos de limpieza rigurosos y
+              productos <strong>aprobados para uso canino</strong>. Cada servicio se adapta a la
+              condición del manto y a la personalidad de tu peludo para lograr un
+              resultado bonito, cómodo y saludable.
+            </p>
 
-        <blockquote class="founder-quote">
-          “Mi meta es que salgan limpios y guapos… pero, sobre todo, tranquilos y felices.”
-        </blockquote>
+            <blockquote class="founder-quote">
+              “Mi meta es que salgan limpios y guapos… pero, sobre todo, tranquilos y felices.”
+            </blockquote>
 
-        <ul class="cert-badges" aria-label="Certificaciones">
-          <li><i class="fa-solid fa-certificate"></i> Pet First Aid &amp; CPR</li>
-          <li><i class="fa-solid fa-shield-dog"></i> Manejo fear-free</li>
-          <li><i class="fa-solid fa-scissors"></i> Estilos por raza &amp; pet trim</li>
-        </ul>
+            <ul class="cert-badges" aria-label="Certificaciones">
+              <li><i class="fa-solid fa-certificate"></i> Pet First Aid &amp; CPR</li>
+              <li><i class="fa-solid fa-shield-dog"></i> Manejo fear-free</li>
+              <li><i class="fa-solid fa-scissors"></i> Estilos por raza &amp; pet trim</li>
+            </ul>
 
-        <div class="about-stats">
-          <div class="stat">
-            <span class="num">+300</span>
-            <span class="lbl">perritos atendidos</span>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="num">+300</span>
+                <span class="lbl">perritos atendidos</span>
+              </div>
+              <div class="stat">
+                <span class="num">4+</span>
+                <span class="lbl">años con peludos</span>
+              </div>
+              <div class="stat">
+                <span class="num">100%</span>
+                <span class="lbl">enfoque amable</span>
+              </div>
+            </div>
+
+            <div class="about-cta">
+              <a class="btn-cta"
+                 href="https://wa.me/18632894525?text=Hola%20Lovely%20Dog%20Care!%20Quiero%20agendar%20grooming%20para%20mi%20perrito."
+                 target="_blank" rel="noopener">
+                Agendar por WhatsApp
+              </a>
+              <a class="btn-outline" href="#galeria">Ver resultados</a>
+            </div>
           </div>
-          <div class="stat">
-            <span class="num">4+</span>
-            <span class="lbl">años con peludos</span>
-          </div>
-          <div class="stat">
-            <span class="num">100%</span>
-            <span class="lbl">enfoque amable</span>
-          </div>
-        </div>
 
-        <div class="about-cta">
-          <a class="btn-cta"
-             href="https://wa.me/18632894525?text=Hola%20Lovely%20Dog%20Care!%20Quiero%20agendar%20grooming%20para%20mi%20perrito."
-             target="_blank" rel="noopener">
-            Agendar por WhatsApp
-          </a>
-          <a class="btn-outline" href="#gallery">Ver resultados</a>
+          <figure class="about-portrait">
+            <img src="img/franci.jpg"
+                 alt="Francis Ortiz, groomer y fundadora de Lovely Dog Care"
+                 class="about-photo" loading="lazy" decoding="async">
+            <figcaption>Francis Ortiz — Fundadora &amp; Groomer</figcaption>
+          </figure>
         </div>
       </div>
-
-      <figure class="about-portrait">
-        <img src="img/franci.jpg"
-             alt="Francis Ortiz, groomer y fundadora de Lovely Dog Care"
-             class="about-photo" loading="lazy" decoding="async">
-        <figcaption>Francis Ortiz — Fundadora &amp; Groomer</figcaption>
-      </figure>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- ========== Contacto ========== -->
     <section id="contact" class="section" aria-labelledby="ttl-contacto">
@@ -369,12 +372,12 @@
   <!-- ========== Footer ========== -->
   <footer class="site-footer">
     <div class="container">
-      <p><small>&copy; 2025 Lovely Dog Care. Amor y estilo para tu perrito. | Website made with love by <a href="https://chepot87.github.io/norvak-web/" target="_blank" rel="noopener noreferrer">Norvak</small></p>
+      <p><small>&copy; 2025 Lovely Dog Care. Amor y estilo para tu perrito. | Website made with love by
+        <a href="https://chepot87.github.io/norvak-web/" target="_blank" rel="noopener noreferrer">Norvak</a></small></p>
       <a class="btn-whatsapp" href="https://wa.me/18632894525?text=Hola%20Lovely%20Dog%20Care%2C%20tengo%20una%20pregunta" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
       </a>
     </div>
-    
   </footer>
 
   <!-- Botón flotante de WhatsApp (opcional) -->

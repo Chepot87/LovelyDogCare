@@ -1,5 +1,5 @@
 /* =======================================================
-   Lovely Dog Care — styles.css (clean)
+   Lovely Dog Care — styles.css (clean + mobile/desktop OK)
    ======================================================= */
 
 /* =============== 1) VARIABLES ================= */
@@ -29,6 +29,9 @@
   --space-6:40px;
 
   --container:1100px;
+
+  /* Altura de header para compensar anclas (#about, etc.) */
+  --header-h:72px;
 }
 @media (prefers-color-scheme: dark){
   :root{
@@ -36,10 +39,18 @@
     --glass-border:rgba(255,255,255,.12);
   }
 }
+/* Si en mobile tu header “crece”, subimos el offset de ancla */
+@media (max-width:640px){
+  :root{ --header-h:88px; }
+}
 
 /* =============== 2) BASE / RESET ============== */
 *{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html{
+  scroll-behavior:smooth;
+  /* Deja espacio al aterrizar en anclas (header sticky) */
+  scroll-padding-top:var(--header-h);
+}
 body{
   margin:0;
   font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
@@ -50,6 +61,11 @@ body{
 }
 img{ display:block; max-width:100%; height:auto; }
 a{ color:inherit; text-decoration:none; }
+
+/* Anclas: margen extra por si algún navegador ignora scroll-padding */
+#about, #galeria, #services, #pricing, #reviews, #contact{
+  scroll-margin-top:var(--header-h);
+}
 
 /* =============== 3) LAYOUT UTILITIES ========== */
 .container{ max-width:var(--container); margin:0 auto; padding:0 var(--space-4); }
@@ -97,56 +113,13 @@ a{ color:inherit; text-decoration:none; }
 }
 .btn-whatsapp:hover{ filter:brightness(1.05); }
 
+/* Responsive header tweaks */
+@media (max-width:640px){
+  .logo{ width:110px; }
+  .site-nav{ gap:18px; flex-wrap:wrap; }
+}
+
 /* =============== 5) HERO ======================= */
-
-/* image — glow + shine + float */
-.hero-art{
-  position:relative;
-  display:grid;
-  place-items:center;
-  isolation:isolate;
-  animation:hero-float 9s ease-in-out infinite;
-}
-.hero-art::before{
-  content:"";
-  position:absolute; inset:-24px;
-  background:
-    radial-gradient(300px 200px at 15% 20%, rgba(22,224,120,.25), transparent 60%),
-    radial-gradient(300px 220px at 85% 85%, rgba(249,161,188,.22), transparent 60%);
-  filter:blur(24px);
-  z-index:0;
-}
-.hero-art::after{
-  content:"";
-  position:absolute; inset:12px;
-  border-radius:24px;
-  background:linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 60%);
-  transform:translateX(-120%) rotate(.5deg);
-  transition:transform .8s ease;
-  pointer-events:none;
-  z-index:2;
-}
-.hero-art:hover::after{ transform:translateX(120%) rotate(.5deg); }
-.hero-art img{
-  position:relative; z-index:1;
-  width:min(440px,90%);
-  border-radius:24px;
-  outline:2px solid rgba(255,255,255,.65);
-  outline-offset:-8px;
-  box-shadow:0 22px 55px rgba(0,0,0,.22);
-  transform-origin:center;
-  transition:transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
-  filter:saturate(1.02) contrast(1.02);
-}
-.hero-art:hover img{
-  transform:translateY(-6px) scale(1.02) rotateZ(-.4deg);
-  filter:saturate(1.08) contrast(1.06);
-}
-@keyframes hero-float{
-  0%,100%{ transform:translateY(0); }
-  50%{ transform:translateY(-6px); }
-}
-
 .hero{
   background:
     radial-gradient(1100px 400px at 0% -10%, rgba(22,224,120,.12), transparent 45%),
@@ -155,6 +128,9 @@ a{ color:inherit; text-decoration:none; }
 .hero-inner{
   display:grid; grid-template-columns:1.2fr .8fr; gap:clamp(16px,4vw,40px);
   align-items:center; padding:clamp(28px,6vw,80px) 0;
+}
+@media (max-width:900px){
+  .hero-inner{ grid-template-columns:1fr; }
 }
 .hero-copy h1{
   margin:0 0 10px;
@@ -176,11 +152,44 @@ a{ color:inherit; text-decoration:none; }
 }
 .btn-outline:hover{ background:rgba(28,66,48,.08); }
 
-/* (intencional) redefinición posterior usada en la página */
+/* Imagen del hero con glow + shine + float */
+.hero-art{
+  position:relative; display:grid; place-items:center; isolation:isolate;
+  animation:hero-float 9s ease-in-out infinite;
+}
+.hero-art::before{
+  content:""; position:absolute; inset:-24px;
+  background:
+    radial-gradient(300px 200px at 15% 20%, rgba(22,224,120,.25), transparent 60%),
+    radial-gradient(300px 220px at 85% 85%, rgba(249,161,188,.22), transparent 60%);
+  filter:blur(24px); z-index:0;
+}
+.hero-art::after{
+  content:""; position:absolute; inset:12px; border-radius:24px;
+  background:linear-gradient(115deg, rgba(255,255,255,0) 40%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 60%);
+  transform:translateX(-120%) rotate(.5deg);
+  transition:transform .8s ease; pointer-events:none; z-index:2;
+}
+.hero-art:hover::after{ transform:translateX(120%) rotate(.5deg); }
 .hero-art img{
+  position:relative; z-index:1;
   width:min(440px,90%);
   margin-inline:auto;
-  filter:drop-shadow(0 18px 40px rgba(0,0,0,.12));
+  border-radius:24px;
+  outline:2px solid rgba(255,255,255,.65);
+  outline-offset:-8px;
+  box-shadow:0 22px 55px rgba(0,0,0,.22), 0 18px 40px rgba(0,0,0,.12);
+  transform-origin:center;
+  transition:transform .45s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+  filter:saturate(1.02) contrast(1.02);
+}
+.hero-art:hover img{
+  transform:translateY(-6px) scale(1.02) rotateZ(-.4deg);
+  filter:saturate(1.08) contrast(1.06);
+}
+@keyframes hero-float{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-6px); }
 }
 
 /* =============== 6) GALLERY + LIGHTBOX ========= */
@@ -327,13 +336,6 @@ a{ color:inherit; text-decoration:none; }
 .modal-actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:12px; }
 
 /* =============== 10) ABOUT (Glass) ============ */
-.about-grid{
-  display:grid; grid-template-columns:1.1fr .9fr; gap:clamp(16px,3vw,28px); align-items:center;
-}
-@media (max-width:900px){ .about-grid{ grid-template-columns:1fr; } }
-.about-photo{ border-radius:16px; box-shadow:0 10px 22px rgba(0,0,0,.12); }
-
-/* ==== ABOUT — panel vistoso (theme) ==== */
 .about-wrap{
   position:relative;
   display:grid;
@@ -352,13 +354,12 @@ a{ color:inherit; text-decoration:none; }
   overflow:hidden;
 }
 .about-wrap::after{
-  content:"";
-  position:absolute; inset:0;
-  pointer-events:none;
+  content:""; position:absolute; inset:0; pointer-events:none;
   background:linear-gradient(90deg, rgba(22,224,120,.06), rgba(255,91,132,.06));
   mix-blend-mode:soft-light;
 }
 .about-copy p{ margin:0 0 10px; color:#3b3b3b; }
+
 .founder-quote{
   margin:12px 0 14px; padding:12px 14px;
   border-left:4px solid color-mix(in srgb, var(--brand), #000 15%);
@@ -376,6 +377,7 @@ a{ color:inherit; text-decoration:none; }
   box-shadow:0 4px 12px rgba(0,0,0,.05);
 }
 .cert-badges i{ color:#0b6e40; }
+
 .about-stats{
   display:grid; grid-template-columns:repeat(3, minmax(140px,1fr));
   gap:12px; margin:12px 0 4px;
@@ -391,6 +393,7 @@ a{ color:inherit; text-decoration:none; }
   -webkit-background-clip:text; background-clip:text; color:transparent;
 }
 .stat .lbl{ display:block; color:#5b524b; font-weight:700; }
+
 .about-cta{ display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; }
 
 .about-portrait{
@@ -401,12 +404,71 @@ a{ color:inherit; text-decoration:none; }
 }
 .about-photo{
   width:min(420px,100%);
+  max-width:100%;
+  height:auto;
   border-radius:18px;
   box-shadow:0 16px 34px rgba(0,0,0,.14);
   border:1px solid var(--card-border);
 }
+
+/* Tema dark vistoso del panel About */
+.about-dark{
+  font-family:'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:#FEFCF6;
+  background-color:#16231b;
+  background:
+    radial-gradient(1000px 360px at 6% -10%, rgba(22,224,120,.20), transparent 55%),
+    radial-gradient(820px 300px at 100% 110%, rgba(249,161,188,.18), transparent 55%),
+    linear-gradient(180deg, #163024 0%, #2c2118 100%) !important;
+  -webkit-backdrop-filter:none;
+  backdrop-filter:none;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 16px 34px rgba(0,0,0,.22);
+}
+.about-dark .section-title{
+  color:#fff; position:relative; font-family:'Quicksand', system-ui, sans-serif;
+}
+.about-dark .section-title::before{
+  content:""; position:absolute; left:-36px; top:-18px; width:64px; height:64px;
+  background:
+    conic-gradient(from -20deg,
+      transparent 0 55deg, rgba(255,91,132,.70) 55deg 74deg, transparent 74deg 122deg,
+      rgba(22,224,120,.70) 122deg 140deg, transparent 140deg 360deg);
+  filter:blur(.2px);
+}
+.about-dark p{ color:#f1ede6; }
+.about-dark .founder-quote{
+  background:rgba(255,255,255,.10); border-left:4px solid #16e078; color:#fff;
+}
+.about-dark .cert-badges li{
+  background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.18);
+}
+.about-dark .cert-badges i{ color:#9af0c2; }
+.about-dark .stat{
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
+}
+.about-dark .stat .num{
+  background:linear-gradient(90deg,#16e078,#f59e0b);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.about-dark .stat .lbl{ color:#efe9e1; opacity:.95; }
+.about-dark .btn-outline{ border-color:rgba(255,255,255,.72); color:#fff; }
+.about-dark .btn-outline:hover{ background:rgba(255,255,255,.10); }
+.about-dark .btn-cta{ background:#16e078; color:#0c2015; box-shadow:0 10px 24px rgba(22,224,120,.35); }
+.about-wrap.about-dark{
+  box-shadow:
+    0 16px 34px rgba(0,0,0,.16),
+    0 0 0 1px rgba(255,255,255,.06),
+    0 0 24px rgba(22,224,120,.12);
+}
+.about-wrap.about-dark .about-photo{
+  position:relative; outline:2px solid rgba(255,255,255,.12); outline-offset:-6px;
+  box-shadow:0 18px 40px rgba(0,0,0,.28);
+}
+
+/* Mobile About: una columna, foto primero y mejor separación */
 @media (max-width:900px){
-  .about-wrap{ grid-template-columns:1fr; }
+  .about-wrap{ grid-template-columns:1fr; row-gap:18px; }
   .about-portrait{ order:-1; }
 }
 
@@ -459,94 +521,3 @@ a{ color:inherit; text-decoration:none; }
   display:flex; gap:12px; align-items:center; justify-content:center; flex-wrap:wrap;
 }
 .site-footer .btn-whatsapp{ background:#25d366; color:#fff; }
-
-/* =============== 14) RESPONSIVE BITS =========== */
-@media (max-width:640px){
-  .logo{ width:120px; }
-  .site-nav{ gap:18px; flex-wrap:wrap; }
-}
-
-
-/* About – Lovely Dog Care dark panel (updated colors only) */
-.about-dark{
-  /* font for this section */
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-
-  color:#FEFCF6;
-
-  /* Fallback color (shows even if gradients are cached/unsupported) */
-  background-color:#16231b;
-
-  /* New base + glows */
-  background:
-    radial-gradient(1000px 360px at 6% -10%, rgba(22,224,120,.20), transparent 55%),
-    radial-gradient(820px 300px at 100% 110%, rgba(249,161,188,.18), transparent 55%),
-    linear-gradient(180deg, #163024 0%, #2c2118 100%) !important;
-
-  -webkit-backdrop-filter:none;
-  backdrop-filter:none;
-  border:1px solid rgba(255,255,255,.12);
-  box-shadow:0 16px 34px rgba(0,0,0,.22);
-}
-
-.about-dark .section-title{
-  color:#fff; position:relative;
-  /* (optional) keep titles in Quicksand to match the site */
-  font-family:'Quicksand', system-ui, sans-serif;
-}
-.about-dark .section-title::before{
-  content:"";
-  position:absolute; left:-36px; top:-18px; width:64px; height:64px;
-  background:
-    conic-gradient(from -20deg,
-      transparent 0 55deg, rgba(255,91,132,.70) 55deg 74deg, transparent 74deg 122deg,
-      rgba(22,224,120,.70) 122deg 140deg, transparent 140deg 360deg);
-  filter:blur(.2px);
-}
-
-.about-dark p{ color:#f1ede6; }
-
-.about-dark .founder-quote{
-  background: rgba(255,255,255,.10);
-  border-left:4px solid #16e078; /* brand */
-  color:#fff;
-}
-
-.about-dark .cert-badges li{
-  background: rgba(255,255,255,.08);
-  color:#fff;
-  border:1px solid rgba(255,255,255,.18);
-}
-.about-dark .cert-badges i{ color:#9af0c2; }
-
-.about-dark .stat{
-  background: rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.18);
-}
-.about-dark .stat .num{
-  background: linear-gradient(90deg,#16e078,#f59e0b);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.about-dark .stat .lbl{ color:#efe9e1; opacity:.95; }
-
-.about-dark .btn-outline{ border-color:rgba(255,255,255,.72); color:#fff; }
-.about-dark .btn-outline:hover{ background:rgba(255,255,255,.10); }
-.about-dark .btn-cta{ background:#16e078; color:#0c2015; box-shadow:0 10px 24px rgba(22,224,120,.35); }
-
-.about-dark .about-photo{ border-color:rgba(255,255,255,.18); }
-
-
-.about-wrap.about-dark{
-  box-shadow:
-    0 16px 34px rgba(0,0,0,.16),
-    0 0 0 1px rgba(255,255,255,.06),
-    0 0 24px rgba(22,224,120,.12); /* glow sutil brand */
-}
-
-
-.about-wrap.about-dark .about-photo{
-  position: relative;
-  outline: 2px solid rgba(255,255,255,.12);
-  outline-offset: -6px;
-  box-shadow: 0 18px 40px rgba(0,0,0,.28);
-}
