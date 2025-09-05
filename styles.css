@@ -513,6 +513,28 @@ a{ color:inherit; text-decoration:none; }
 .review-author{ margin:0; font-weight:700; color:var(--accent-brown); }
 .review-cta{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
 
+.preview-img {
+  display: block;
+  margin: 2rem auto;               /* space it out nicely */
+  max-width: 100%;                  /* responsive */
+  width: 520px;                    /* default size */
+  height: auto;
+  border-radius: 16px;             /* softer edges like your cards */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15),
+              0 0 18px rgba(22, 224, 120, 0.25); /* brand glow */
+  transition: transform 0.35s ease, 
+              box-shadow 0.35s ease, 
+              filter 0.35s ease;
+}
+
+.preview-img:hover {
+  transform: translateY(-6px) scale(1.03); /* floating zoom */
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.25),
+              0 0 24px rgba(22, 224, 120, 0.35);
+  filter: saturate(1.05) contrast(1.05);
+}
+
+
 /* =============== 13) FOOTER ==================== */
 .site-footer{
   background:#000; color:#fff; padding:20px 0; text-align:center; margin-top:20px;
