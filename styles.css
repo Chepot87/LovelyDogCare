@@ -619,3 +619,41 @@ html{ scroll-behavior: smooth; }
 
 /* --- 4) (Opcional pero útil) Lightbox: respeta [hidden] y sí cierra --- */
 .lightbox[hidden]{ display: none !important; }
+
+/* === PATCH: About en móvil (evitar corte de cards) === */
+
+/* Asegura que nada “desborde” visual dentro del panel */
+.about-dark{
+  overflow: hidden;
+}
+
+/* Las stats pasan a grid para medir mejor en móvil */
+.about-stats{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;   /* 2 por fila en móvil */
+  gap: 12px;
+  margin: 10px 0;
+}
+
+/* En pantallas medianas ya podemos mostrar 3 por fila */
+@media (min-width: 640px){
+  .about-stats{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Asegura que cada stat pueda encoger y no empuje el layout */
+.stat{
+  min-width: 0;        /* CLAVE en iOS Safari */
+  width: 100%;
+  border-radius: 12px;
+}
+
+/* Por si alguna palabra larga o número rompe la línea */
+.stat .num, .stat .lbl{
+  overflow-wrap: anywhere;
+}
+
+/* También evita cualquier 1px de scroll horizontal fantasma en iOS */
+html, body{ overflow-x: hidden; }
