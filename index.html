@@ -3,28 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Lovely Dog Care — Grooming y cuidado canino</title>
 
-  <!-- Favicon -->
+  <!-- ========== Favicon ========== -->
   <link rel="icon" href="img/logo.png" type="image/png" />
 
-  <!-- Fonts & Icons -->
+  <!-- ========== Fonts & Icons ========== -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- SEO -->
+  <!-- ========== SEO Base ========== -->
   <meta name="description" content="Grooming y cuidado personalizado para perritos felices en Lovely Dog Care. Baño, corte, daycare y estética canina con mucho amor." />
   <meta name="theme-color" content="#16e078" />
-  <link rel="canonical" href="https://chepot87.github.io/LovelyDogCare/">
+  <!-- NOTE: usa tu dominio final aquí -->
+  <link rel="canonical" href="https://www.lovelydogcare.com/">
 
-  <!-- Social (Open Graph / Twitter) -->
+  <!-- ========== Social (Open Graph / Twitter) ========== -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://chepot87.github.io/LovelyDogCare/">
+  <meta property="og:url" content="https://www.lovelydogcare.com/">
   <meta property="og:site_name" content="Lovely Dog Care">
   <meta property="og:title" content="Lovely Dog Care — Grooming y cuidado canino">
   <meta property="og:description" content="Baño, corte, daycare y estética canina con enfoque fear-free. Agenda por WhatsApp.">
-  <meta property="og:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
+  <!-- NOTE: apunta esta imagen al host final cuando la tengas allí -->
+  <meta property="og:image" content="https://www.lovelydogcare.com/img/preview.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:type" content="image/jpeg">
@@ -33,25 +36,33 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lovely Dog Care — Grooming y cuidado canino">
   <meta name="twitter:description" content="Baño, corte, daycare y estética canina con enfoque fear-free.">
-  <meta name="twitter:image" content="https://chepot87.github.io/LovelyDogCare/img/preview.jpg">
+  <meta name="twitter:image" content="https://www.lovelydogcare.com/img/preview.jpg">
 
-  <!-- CSS -->
+  <!-- ========== CSS Main ========== -->
   <link rel="stylesheet" href="styles.css" />
 
   <!-- Fix anclas en mobile (header cubriendo el inicio de la sección) -->
   <style>
-    :root { --header-h: 72px; }             /* ajusta si tu header es más alto */
+    :root { --header-h: 72px; } /* ajusta si tu header es más alto */
     html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
     #about, #galeria, #services, #pricing, #reviews, #contact { scroll-margin-top: var(--header-h); }
   </style>
 </head>
+
 <body>
 
-  <!-- ========== Header ========== -->
+  <!-- ===================================================== -->
+  <!-- =============== Header / Navegación ================= -->
+  <!-- ===================================================== -->
   <header class="site-header" role="banner">
     <div class="container header-bar">
       <a class="brand" href="#top" aria-label="Inicio">
-        <img src="img/logo.png" alt="Lovely Dog Care" class="logo" width="96" height="96" loading="lazy" decoding="async">
+        <img
+          src="img/logo.png"
+          alt="Lovely Dog Care"
+          class="logo"
+          width="96" height="96"
+          loading="lazy" decoding="async">
       </a>
 
       <nav class="site-nav" aria-label="Navegación principal">
@@ -69,7 +80,9 @@
     </div>
   </header>
 
-  <!-- ========== Hero ========== -->
+  <!-- ===================================================== -->
+  <!-- ======================== Hero ======================= -->
+  <!-- ===================================================== -->
   <section class="hero" id="top" aria-label="Hero">
     <div class="container hero-inner">
       <div class="hero-copy">
@@ -80,13 +93,21 @@
           <a class="btn-outline" href="https://www.instagram.com/lovely_dog_care/" target="_blank" rel="noopener">Ver Instagram</a>
         </div>
       </div>
+
       <div class="hero-art">
-        <img src="img/perro1.png" alt="Perrito feliz recién groomed" loading="lazy" decoding="async">
+        <!-- LCP: NO lazy aquí -->
+        <img
+          src="img/perro1.png"
+          alt="Perrito feliz recién groomed"
+          width="1200" height="900"
+          decoding="async">
       </div>
     </div>
   </section>
 
-  <!-- ========== Galería ========== -->
+  <!-- ===================================================== -->
+  <!-- ======================= Galería ===================== -->
+  <!-- ===================================================== -->
   <section id="galeria" class="section glass gallery-section" aria-labelledby="ttl-galeria">
     <div class="container">
       <h2 id="ttl-galeria" class="section-title">Nuestros Clientes</h2>
@@ -94,27 +115,32 @@
 
       <div class="gallery-grid">
         <figure class="shot">
-          <img src="img/perro2.png" alt="Toby — antes y después de Full Groom" loading="lazy">
+          <img src="img/perro2.png" alt="Toby — antes y después de Full Groom" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Toby — Full Groom</figcaption>
         </figure>
+
         <figure class="shot">
-          <img src="img/perro3.png" alt="Luna — baño y cepillado" loading="lazy">
+          <img src="img/perro3.png" alt="Luna — baño y cepillado" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Luna — Baño &amp; Cepillado</figcaption>
         </figure>
+
         <figure class="shot">
-          <img src="img/perro4.png" alt="Max — corte de raza" loading="lazy">
+          <img src="img/perro4.png" alt="Max — corte de raza" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Max — Estilo de raza</figcaption>
         </figure>
+
         <figure class="shot">
-          <img src="img/perro5.png" alt="Mia — grooming de mantenimiento" loading="lazy">
+          <img src="img/perro5.png" alt="Mia — grooming de mantenimiento" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Mia — Grooming</figcaption>
         </figure>
+
         <figure class="shot">
-          <img src="img/perro6.png" alt="Lola — Full Groom" loading="lazy">
+          <img src="img/perro6.png" alt="Lola — Full Groom" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Lola — Full Groom</figcaption>
         </figure>
+
         <figure class="shot">
-          <img src="img/perro7.png" alt="Rex — Baño y paseo" loading="lazy">
+          <img src="img/perro7.png" alt="Rex — Baño y paseo" width="1200" height="900" loading="lazy" decoding="async">
           <figcaption>Rex — Baño y paseo</figcaption>
         </figure>
       </div>
@@ -130,16 +156,21 @@
     </figure>
   </section>
 
+  <!-- ===================================================== -->
+  <!-- ======================= Main ======================== -->
+  <!-- ===================================================== -->
   <main role="main">
 
-        <img src="img/preview.jpg" 
-     alt="Lovely Dog Care Preview" 
-     class="preview-img" 
-     aria-hidden="true" 
-     loading="lazy" 
-     decoding="async">
+    <!-- Imagen de preview oculta para SEO/social (ok aria-hidden) -->
+    <img
+      src="img/preview.jpg"
+      alt="Lovely Dog Care Preview"
+      class="preview-img"
+      aria-hidden="true"
+      width="1200" height="630"
+      loading="lazy" decoding="async">
 
-    <!-- ========== Servicios (Sticky Notes) ========== -->
+    <!-- =================== Servicios ==================== -->
     <section id="services" class="section" aria-labelledby="ttl-servicios">
       <div class="container">
         <h2 id="ttl-servicios" class="section-title">Servicios</h2>
@@ -172,7 +203,7 @@
       </div>
     </section>
 
-    <!-- ========== Precios (Glass + Pago simulado) ========== -->
+    <!-- ===================== Precios ===================== -->
     <section id="pricing" class="section" aria-labelledby="ttl-precios">
       <div class="container">
         <h2 id="ttl-precios" class="section-title">Precios</h2>
@@ -233,7 +264,7 @@
       </div>
     </section>
 
-    <!-- ========== Reviews ========== -->
+    <!-- ====================== Reseñas ===================== -->
     <section id="reviews" class="section" aria-labelledby="ttl-reviews">
       <div class="container">
         <h2 id="ttl-reviews" class="section-title">Reseñas de clientes</h2>
@@ -277,7 +308,7 @@
       </div>
     </section>
 
-    <!-- ========== About (glass) ========== -->
+    <!-- ================== About / Conócenos ================= -->
     <section id="about" class="section">
       <div class="container">
         <div class="about-wrap about-dark">
@@ -336,16 +367,19 @@
           </div>
 
           <figure class="about-portrait">
-            <img src="img/franci.jpg"
-                 alt="Francis Ortiz, groomer y fundadora de Lovely Dog Care"
-                 class="about-photo" loading="lazy" decoding="async">
+            <img
+              src="img/franci.jpg"
+              alt="Francis Ortiz, groomer y fundadora de Lovely Dog Care"
+              class="about-photo"
+              width="900" height="1200"
+              loading="lazy" decoding="async">
             <figcaption>Francis Ortiz — Fundadora &amp; Groomer</figcaption>
           </figure>
         </div>
       </div>
     </section>
 
-    <!-- ========== Contacto ========== -->
+    <!-- ===================== Contacto ===================== -->
     <section id="contact" class="section" aria-labelledby="ttl-contacto">
       <div class="container">
         <h2 id="ttl-contacto" class="section-title">Contacto &amp; Redes</h2>
@@ -376,11 +410,16 @@
 
   </main>
 
-  <!-- ========== Footer ========== -->
+  <!-- ===================================================== -->
+  <!-- ======================== Footer ===================== -->
+  <!-- ===================================================== -->
   <footer class="site-footer">
     <div class="container">
-      <p><small>&copy; 2025 Lovely Dog Care. Amor y estilo para tu perrito. | Website made with love by
-        <a href="https://chepot87.github.io/Norvak-Version-B/" target="_blank" rel="noopener noreferrer">Norvak</a></small></p>
+      <p>
+        <small>&copy; 2025 Lovely Dog Care. Amor y estilo para tu perrito. |
+        Website made with love by
+        <a href="https://chepot87.github.io/Norvak-Version-B/" target="_blank" rel="noopener noreferrer">Norvak</a></small>
+      </p>
       <a class="btn-whatsapp" href="https://wa.me/18632894525?text=Hola%20Lovely%20Dog%20Care%2C%20tengo%20una%20pregunta" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i> WhatsApp
       </a>
@@ -393,27 +432,31 @@
     class="whatsapp-float"
     target="_blank"
     rel="noopener"
-    aria-label="Contactar por WhatsApp"
-  >💬</a>
+    aria-label="Contactar por WhatsApp">💬</a>
 
-  <!-- Schema.org básico -->
+  <!-- ===================================================== -->
+  <!-- =================== Schema.org (JSON-LD) ============ -->
+  <!-- ===================================================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "PetGrooming",
     "name": "Lovely Dog Care",
-    "image": "img/logo.png",
+    "image": "https://www.lovelydogcare.com/img/logo.png",
     "email": "mailto:lovelydogcare@email.com",
     "telephone": "+18632894525",
-    "areaServed": "Puerto Rico",
+    "areaServed": "Florida, USA",
     "sameAs": [
       "https://www.instagram.com/lovely_dog_care/",
       "https://www.facebook.com/francis.ortiz.7965692/"
-    ]
+    ],
+    "url": "https://www.lovelydogcare.com/"
   }
   </script>
 
-  <!-- JS: Lightbox simple para la galería -->
+  <!-- ===================================================== -->
+  <!-- ================ JS: Lightbox simple ================ -->
+  <!-- ===================================================== -->
   <script>
     (function(){
       const lb = document.getElementById('lightbox');
@@ -440,12 +483,8 @@
         document.body.style.overflow = '';
       }
       closeBtn.addEventListener('click', closeLB);
-      lb.addEventListener('click', (e) => {
-        if(e.target === lb) closeLB();
-      });
-      window.addEventListener('keydown', (e) => {
-        if(e.key === 'Escape' && !lb.hidden) closeLB();
-      });
+      lb.addEventListener('click', (e) => { if(e.target === lb) closeLB(); });
+      window.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !lb.hidden) closeLB(); });
     })();
   </script>
 
