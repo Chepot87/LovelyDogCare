@@ -46,6 +46,18 @@
     :root { --header-h: 72px; }
     html { scroll-behavior: smooth; scroll-padding-top: var(--header-h); }
     #about, #galeria, #services, #pricing, #reviews, #contact { scroll-margin-top: var(--header-h); }
+
+    /* --- Fix header: stay on top --- */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      /* Optional polish; remove if you prefer solid bg from styles.css */
+      -webkit-backdrop-filter: saturate(1.2) blur(6px);
+      backdrop-filter: saturate(1.2) blur(6px);
+    }
+    /* Spacer so the fixed header doesn't overlap content */
+    .header-spacer { height: var(--header-h); }
   </style>
 
   <!-- ========== Local SEO (Schema.org) ========== -->
@@ -80,7 +92,6 @@
   </script>
 </head>
 
-
 <body>
 
   <!-- ===================================================== -->
@@ -106,11 +117,12 @@
         <a href="#contact">Contacto</a>
       </nav>
 
-      <a class="btn-whatsapp" href="https://wa.me/18632894525?text=Hola%20Lovely%20Dog%20Care%20%F0%9F%90%B6%20me%20gustar%C3%ADa%20reservar" target="_blank" rel="noopener">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
+      <!-- WhatsApp del header removido -->
     </div>
   </header>
+
+  <!-- Spacer para compensar header fijo -->
+  <div class="header-spacer" aria-hidden="true"></div>
 
   <!-- ===================================================== -->
   <!-- ======================== Hero ======================= -->
@@ -211,22 +223,19 @@
           <article class="note-card tilt-l">
             <h3>Paseo &amp; Daycare</h3>
             <p>Cuidado, juegos y socialización para tu perrito.</p>
-           <a class="chip" href="#contact">Reservar ahora</a>
-
+            <a class="chip" href="#contact">Reservar ahora</a>
           </article>
 
           <article class="note-card">
             <h3>Baño &amp; Grooming</h3>
             <p>Limpieza, corte de pelo, uñas y orejas.</p>
             <a class="chip" href="#contact">Reservar ahora</a>
-
           </article>
 
           <article class="note-card tilt-r">
             <h3>Estética Canina</h3>
             <p>Peinado y estilo según la raza.</p>
-          <a class="chip" href="#contact">Reservar ahora</a>
-
+            <a class="chip" href="#contact">Reservar ahora</a>
           </article>
         </div>
       </div>
@@ -386,9 +395,8 @@
             </div>
 
             <div class="about-cta">
-             <a class="btn-outline" href="#contact">Solicitar información</a>
-             <a class="btn-outline" href="#galeria">Ver resultados</a>
-
+              <a class="btn-outline" href="#contact">Solicitar información</a>
+              <a class="btn-outline" href="#galeria">Ver resultados</a>
             </div>
           </div>
 
